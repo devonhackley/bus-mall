@@ -52,7 +52,6 @@ function randomImg(event) {
     }
     indices[i] = idx;
   }
-
   oldInx = indices;
 
   var productsToBeSeen = [];
@@ -72,21 +71,10 @@ function randomImg(event) {
     for (var i = 0; i < imgTags.length; i++) {
       imgTags[i].removeEventListener('click', randomImg);
     }
-    // genResults();
     showResults();
   }
 };
 
-function genResults () {
-  for (var i = 0; i < productArray.length; i++){
-    var thisProduct = productArray[i];
-    if (thisProduct.numOfDisplays === 0) {
-      thisProduct.clickRate = 0;
-    } else {
-      thisProduct.clickRate = (thisProduct.numOfClicks / thisProduct.numOfDisplays * 100);
-    }
-  }
-};
 randomImg();
 userClicks--;
 
@@ -94,28 +82,24 @@ var imgTags = document.getElementsByClassName('clickable');
 for (var i = 0; i < imgTags.length; i++){
   imgTags[i].addEventListener('click', randomImg);
 }
-//
-// function productsShown(){
-//   for (var i = 0; i < productArray.length; i++) {
-//     console.log(productArray[i].name + ' shown ' + productArray[i].numOfDisplays + ' times.');
-//     console.log(productArray[i].name + ' clicked ' + productArray[i].numOfClicks + ' times.');
-//   }
-// }
-
 function showResults () {
-
   var clickedResults = [];
+  var toStore = {};
   for (var i = 0; i < productArray.length; i++){
+    toStore[productArray[i].name] = productArray[i].numOfClicks;
     clickedResults.push(productArray[i].numOfClicks);
+  }
+
+  localStorage['storedClicks'] = JSON.stringify(toStore);
   }
 
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['bag' , 'banana' , 'bathroom' , 'boots' , 'breakfast' , 'bubblegum' ,'chair' , 'cthulhu' , 'dog duck' , 'pen' , 'pet sweep' , 'scissors' , 'shark' , 'sweep' , 'tauntaun' , 'unicorn' , 'usb' , 'water can' , 'wine glass'],
+      labels: ['bag' , 'banana' , 'bathroom' , 'boots' , 'breakfast' , 'bubblegum' ,'chair' , 'cthulhu' , 'dog duck' , 'dragon', 'pen' , 'pet sweep' , 'scissors' , 'shark' , 'sweep' , 'tauntaun' , 'unicorn' , 'usb' , 'water can' , 'wine glass'],
       datasets: [{
-        label: 'Results',
+        label: 'Results of User prefered products',
         data: clickedResults,
         backgroundColor: ['#ff33bb'],
         borderColor: ['#0000FF'

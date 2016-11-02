@@ -10,6 +10,7 @@ var products = [
   'chair.jpg',
   'cthulhu.jpg',
   'dog-duck.jpg',
+  'dragon.jpg',
   'pen.jpg',
   'pet-sweep.jpg',
   'scissors.jpg',
