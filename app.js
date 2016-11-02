@@ -101,12 +101,17 @@ var imgTags = document.getElementsByClassName('clickable');
 for (var i = 0; i < imgTags.length; i++){
   imgTags[i].addEventListener('click', randomImg);
 }
+//
+// function productsShown(){
+//   for (var i = 0; i < productArray.length; i++) {
+//     console.log(productArray[i].name + ' shown ' + productArray[i].numOfDisplays + ' times.');
+//     console.log(productArray[i].name + ' clicked ' + productArray[i].numOfClicks + ' times.');
+//   }
+// }
 
-function productsShown(){
-  for (var i = 0; i < productArray.length; i++) {
-    console.log(productArray[i].name + ' shown ' + productArray[i].numOfDisplays + ' times.');
-    console.log(productArray[i].name + ' clicked ' + productArray[i].numOfClicks + ' times.');
-  }
+var clickedResults = [];
+for (var i = 0; i < productArray.length; i++){
+  clickedResults.push(productArray[i].numOfClicks);
 }
 
 var ctx = document.getElementById('myChart');
@@ -116,7 +121,7 @@ var myChart = new Chart(ctx, {
     labels: ['bag' , 'banana' , 'bathroom' , 'boots' , 'breakfast' , 'bubblegum' ,'chair' , 'cthulhu' , 'dog duck' , 'pen' , 'pet sweep' , 'scissors' , 'shark' , 'sweep' , 'tauntaun' , 'unicorn' , 'usb' , 'water can' , 'wine glass'],
     datasets: [{
       label: 'Results',
-      data: [],
+      data: clickedResults,
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
