@@ -4,7 +4,7 @@ var products = [
   'bag.jpg', 'boots.jpg', 'chair.jpg', 'dragon.jpg', 'scissors.jpg', 'tauntaun.jpg', 'water-can.jpg', 'banana.jpg', 'breakfast.jpg', 'cthulhu.jpg', 'pen.jpg', 'shark.jpg', 'unicorn.jpg', 'wine-glass.jpg', 'bathroom.jpg', 'bubblegum.jpg', 'dog-duck.jpg', 'pet-sweep.jpg', 'sweep.png', 'usb.gif'
 ];
 
-new Chart(ctx, {
+var newChart = new Chart(ctx, {
   type: 'bar',
   data: {
     labels: ['bag' , 'banana' , 'bathroom' , 'boots' , 'breakfast' , 'bubblegum' ,'chair' , 'cthulhu' , 'dog duck' , 'dragon' , 'pen' , 'pet sweep' , 'scissors' , 'shark' , 'sweep' , 'tauntaun' , 'unicorn' , 'usb' , 'water can' , 'wine glass'],

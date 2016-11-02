@@ -5,8 +5,8 @@ var userClicks = 0;
 var userLimit = 25;
 
 function imgProducts (path) {
-  this.name = ' ';
   this.path = 'img/' + path;
+  this.name = '';
   this.numOfDisplays = 0;
   this.numOfClicks = 0;
   this.generateName = function(){
@@ -30,45 +30,44 @@ function randomNumGen () {
 }
 
 for (var i = 0; i < products.length; i++) {
-  new Product(products[i]);
+  new imgProducts(products[i]);
 }
 
 var oldIdx = [];
 
-var bag = new Product('bag');
-var banana = new Product('banana');
-var bathroom = new Product('bathroom');
-var boots = new Product('boots');
-var breakfast = new Product('breafkast');
-var bubblegum = new Product('bubblegum');
-var chair = new Product('chair');
-var cthulhu = new Product('cthulhu');
-var dogDuck = new Product('dog-duck');
-var dragon = new Product('dragon');
-var pen = new Product('pen');
-var petSweep = new Product('pet-sweep');
-var scissors = new Product('scissors');
-var shark = new Product('shark');
-var baby = new Product('baby-sweep');
-var tauntaun = new Product('tauntaun');
-var unicorn = new Product('unicorn');
-var usb = new Product('usb');
-var waterCan = new Product('water-can');
-var wineGlass = new Product('wine-glass');
+// var bag = new Product('bag');
+// var banana = new Product('banana');
+// var bathroom = new Product('bathroom');
+// var boots = new Product('boots');
+// var breakfast = new Product('breafkast');
+// var bubblegum = new Product('bubblegum');
+// var chair = new Product('chair');
+// var cthulhu = new Product('cthulhu');
+// var dogDuck = new Product('dog-duck');
+// var dragon = new Product('dragon');
+// var pen = new Product('pen');
+// var petSweep = new Product('pet-sweep');
+// var scissors = new Product('scissors');
+// var shark = new Product('shark');
+// var baby = new Product('baby-sweep');
+// var tauntaun = new Product('tauntaun');
+// var unicorn = new Product('unicorn');
+// var usb = new Product('usb');
+// var waterCan = new Product('water-can');
+// var wineGlass = new Product('wine-glass');
 
 function randomImg(event) {
   userClicks++;
-
   if (event) {
     var clickedProdIdx = parseInt(event.target.alt);
     productArray[clickedProdIdx].numOfClicks++;
   }
-
   var imgTags = document.getElementsByClassName('clickable');
   var indices = [];
 
   for (var i = 0; i < imgTags.length; i++) {
     var idx = randomNumGen();
+    //duplicates
     while (indices.indexOf(idx) !== -1 || oldInx.indexOf(idx) !== -1) {
       idx = randomNumGen();
     }
