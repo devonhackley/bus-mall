@@ -10,7 +10,7 @@ function imgProducts (path) {
   this.numOfDisplays = 0;
   this.numOfClicks = 0;
   this.generateName = function(){
-    var splitname = fname.split('.')[0];
+    var splitname = path.split('.')[0];
     var splitdash = splitname.split('-');
     for (var i = 0; i < splitdash.length; i++){
       var letters = splitdash[i].split('');
