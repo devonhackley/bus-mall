@@ -88,8 +88,9 @@ function showResults () {
   if (localStorage['storedClicks']) {
     var storedData = JSON.parse(localStorage['storedClicks']);
     for (var i = 0; i < productArray.length; i++){
-      storedData[productArray[i].name] += productArray[i].numOfClicks;
+      productArray[i].numOfClicks += storedData[productArray[i].name];
     }
+    localStorage['storedData'] = JSON.stringify(storedData);
   }else {
     for (var i = 0; i < productArray.length; i++){
       toStore[productArray[i].name] = productArray[i].numOfClicks;
