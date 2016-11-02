@@ -5,7 +5,7 @@ var userClicks = 0;
 var userLimit = 25;
 
 function imgProducts (path) {
-  this.name = '';
+  this.name = ' ';
   this.path = 'img/' + path;
   this.numOfDisplays = 0;
   this.numOfClicks = 0;
@@ -24,7 +24,7 @@ function imgProducts (path) {
 };
 
 function randomNumGen () {
-  var random = Math.floor((Math.random() * imgArray.length));
+  var random = Math.floor((Math.random() * productArray.length));
   return random;
 
 }
@@ -86,7 +86,7 @@ function randomImg(event) {
   }
 
   for (var i = 0; i < imgTags.length; i++){
-    imgTags[i].setAttribute('src', productsToBeSeen[i].fname);
+    imgTags[i].setAttribute('src', productsToBeSeen[i].path);
     imgTags[i].setAttribute('alt', indices[i]);
   }
 
@@ -127,7 +127,7 @@ for (var i = 0; i < imgTags.length; i++){
 // Utility function for seeing what's been shown and what's been clicked
 function productsShown(){
   for (var i = 0; i < productArray.length; i++) {
-    console.log(productArray[i].name + ' shown ' + allProducts[i].numOfDisplays + ' times.');
-    console.log(productArray[i].name + ' clicked ' + allProducts[i].numOfClicks + ' times.');
+    console.log(productArray[i].name + ' shown ' + productArray[i].numOfDisplays + ' times.');
+    console.log(productArray[i].name + ' clicked ' + productArray[i].numOfClicks + ' times.');
   }
 }
