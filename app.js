@@ -85,12 +85,21 @@ for (var i = 0; i < imgTags.length; i++){
 function showResults () {
   var clickedResults = [];
   var toStore = {};
-  for (var i = 0; i < productArray.length; i++){
-    toStore[productArray[i].name] = productArray[i].numOfClicks;
-    clickedResults.push(productArray[i].numOfClicks);
+  if (localStorage['storedClicks']) {
+    var storedData = JSON.parse(localStorage['storedClicks']);
+    for (var i = 0; i < productArray.length; i++){
+      storedData[productArray[i].name] += productArray[i].numOfClicks;
+    }
+  }else {
+    for (var i = 0; i < productArray.length; i++){
+      toStore[productArray[i].name] = productArray[i].numOfClicks;
+    }
+    localStorage['storedClicks'] = JSON.stringify(toStore);
   }
 
-  localStorage['storedClicks'] = JSON.stringify(toStore);
+  for (var i = 0; i < productArray.length; i++){
+    clickedResults.push(productArray[i].numOfClicks); //separate for loop
+
   }
 
   var ctx = document.getElementById('myChart').getContext('2d');
