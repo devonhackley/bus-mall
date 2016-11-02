@@ -102,7 +102,6 @@ for (var i = 0; i < imgTags.length; i++){
   imgTags[i].addEventListener('click', randomImg);
 }
 
-// Utility function for seeing what's been shown and what's been clicked
 function productsShown(){
   for (var i = 0; i < productArray.length; i++) {
     console.log(productArray[i].name + ' shown ' + productArray[i].numOfDisplays + ' times.');
