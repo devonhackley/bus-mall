@@ -26,15 +26,12 @@ function imgProducts (path) {
 function randomNumGen () {
   var random = Math.floor((Math.random() * productArray.length));
   return random;
-
 }
 
 for (var i = 0; i < products.length; i++) {
   new imgProducts(products[i]);
 }
-
 var oldInx = [];
-
 function randomImg(event) {
   userClicks++;
   if (event) {
@@ -61,12 +58,10 @@ function randomImg(event) {
     productsToBeSeen[i] = productArray[thisIdx];
     productArray[thisIdx].numOfDisplays++;
   }
-
   for (var i = 0; i < imgTags.length; i++){
     imgTags[i].setAttribute('src', productsToBeSeen[i].path);
     imgTags[i].setAttribute('alt', indices[i]);
   }
-
   if (userClicks >= userLimit) {
     for (var i = 0; i < imgTags.length; i++) {
       imgTags[i].removeEventListener('click', randomImg);
@@ -74,7 +69,6 @@ function randomImg(event) {
     showResults();
   }
 };
-
 randomImg();
 userClicks--;
 
@@ -97,12 +91,9 @@ function showResults () {
     }
     localStorage['storedClicks'] = JSON.stringify(toStore);
   }
-
   for (var i = 0; i < productArray.length; i++){
     clickedResults.push(productArray[i].numOfClicks); //separate for loop
-
   }
-
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
