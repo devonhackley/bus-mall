@@ -4,30 +4,63 @@ body {
   text-align: center;
   font-family: 'Bungee Hairline', cursive;
   font-family: 'Open Sans', sans-serif;
+  color: white;
+  background-color: #C7D0D5;
 }
 .box {
   display: inline-block;
   margin-left: 15px;
   width: 300px;
   height: 240px;
-  border: 4px solid black;
+  background-color: #93B1C6;
+  border: 4px groove white;
   transition-property: border-color;
-  transition-duration: 0.5s;
+  transition-duration: 0.1s;
   transition-timing-function: linear;
   overflow: hidden;
+  cursor: pointer;
 }
 .resultbox {
-  border: 4px solid black;
-  width:50%;
+  border: 4px groove white;
+  background-color: #93B1C6;
+  width: 50%;
   margin: 50px auto;
+}
+span {
+  color: #FF7148;
+}
+header {
+  border: 4px groove white;
+  background-color: #93B1C6;
+  width: 40%;
+  margin: 20px auto 20px;
+  padding: 10px;
 }
 
 #underline {
   text-decoration: underline;
+  color:white;
+}
+#home {
+  text-decoration:none;
+  color:white;
+}
+.redo {
+  border: 4px groove white;
+  background-color: #FF7148;
+  width: 20%;
+  box-shadow: 0 5px 0 #C7D0D5;
+  transition: all .1s linear;
+  margin: 20px auto 0;
+  padding: 5px;
+}
+.redo:hover {
+  box-shadow: 0 2px 0 #C7D0D5;
+  transform: translateY(3px);
 }
 
 .box:hover {
-  border-color: #ff33bb;
+  border-color: #FF7148;
 }
 canvas#myChart {
   display: block;
