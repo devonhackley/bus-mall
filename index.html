@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Bus Mall</title>
-    <link rel="stylesheet"  type="text/css" href="style.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Bus Mall</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Open+Sans:700,800" rel="stylesheet">
+  <link rel="stylesheet"  type="text/css" href="style.css" />
+</head>
+<body>
   <header>
-    <h1>Bus Mall</h1>
+    <h1>Bus Mall Survey</h1>
   </header>
   <main>
     <section class="content">
-      <h2>Please click the product you like most!</h2>
-      <ul>
-        <div class="box">
-        <li><img src=""  class="clickable"></li></div>
-        <div class="box">
-        <li><img src=""  class="clickable"></li></div>
-        <div class="box">
-        <li><img src=""  class="clickable"></li></div>
-      </ul>
+      <h2>Please click the products you like most!</h2>
+      <div class="box"><img src="" class="clickable"></div>
+      <div class="box"><img src="" class="clickable"></div>
+      <div class="box"><img src="" class="clickable"></div>
     </section>
     <section id = "user-results">
-    <canvas id="myChart" width="300" height="200"></canvas>
+    <p><a id="home" href="index.html"><h3>Lets Choose Again!</h3></a></p>
+    <article class="resultbox">
+      <h3 id="underline">Results</h3>
+      <canvas id= "myChart" width="500" height="400"></canvas>
+    </article>
     </section>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js" charset="utf-8"></script>
   <script src="data.js" charset="utf-8"></script>
-  <script src="app.js" charset="utf-8"></script>
+  <script src="app.js"></script>
+
+
+
 </body>
 <footer></footer>
 </html>

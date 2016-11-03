@@ -33,8 +33,8 @@ for (var i = 0; i < products.length; i++) {
 }
 var oldInx = [];
 function randomImg(event) {
-  userClicks++;
   if (event) {
+    userClicks++;
     var clickedProdIdx = parseInt(event.target.alt);
     productArray[clickedProdIdx].numOfClicks++;
   }
@@ -84,7 +84,7 @@ function showResults () {
     for (var i = 0; i < productArray.length; i++){
       productArray[i].numOfClicks += storedData[productArray[i].name];
     }
-    localStorage['storedData'] = JSON.stringify(storedData);
+    localStorage['storedClicks'] = JSON.stringify(storedData);
   }else {
     for (var i = 0; i < productArray.length; i++){
       toStore[productArray[i].name] = productArray[i].numOfClicks;
@@ -102,19 +102,22 @@ function showResults () {
       datasets: [{
         label: 'Results of User prefered products',
         data: clickedResults,
-        backgroundColor: ['#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb'],
-        borderColor: ['#0000FF'
-      ],
-        borderWidth: 1
+        backgroundColor: '#ff33bb',
+        borderColor: '#000000',
+        borderWidth: 2
       }]
     },
     options: {
+      responsive: false,
       scales: {
         yAxes: [{
           ticks: {
             beginAtZero:true
           }
         }]
+      },
+      legend: {
+        display: false,
       }
     }
   });
