@@ -111,7 +111,7 @@ function showResults () {
       datasets: [{
         label: 'Results of User prefered products',
         data: clickedResults,
-        backgroundColor: ['#ff33bb'],
+        backgroundColor: ['#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb','#ff33bb',],
         borderColor: ['#0000FF'
       ],
         borderWidth: 1
