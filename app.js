@@ -33,8 +33,7 @@ for (var i = 0; i < products.length; i++) {
   new imgProducts(products[i]);
 }
 
-var oldIdx = [];
-
+var oldI = [];
 function randomImg(event) {
   userClicks++;
   if (event) {
@@ -47,13 +46,12 @@ function randomImg(event) {
 
   for (var i = 0; i < imgTags.length; i++) {
     var idx = randomNumGen();
-    while (indices.indexOf(idx) !== -1 || oldInx.indexOf(idx) !== -1) {
+    while (indices.indexOf(idx) !== -1 || oldI.indexOf(idx) !== -1) {
       idx = randomNumGen();
     }
     indices[i] = idx;
   }
-
-  oldInx = indices;
+  oldI = indices;
 
   var productsToBeSeen = [];
 
