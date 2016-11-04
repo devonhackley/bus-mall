@@ -5,12 +5,12 @@ var userClicks = 0;
 var userLimit = 25;
 
 function imgProducts (path) {
-  this.name = '';
   this.path = 'img/' + path;
+  this.name = '';
   this.numOfDisplays = 0;
   this.numOfClicks = 0;
   this.generateName = function(){
-    var splitname = fname.split('.')[0];
+    var splitname = path.split('.')[0];
     var splitdash = splitname.split('-');
     for (var i = 0; i < splitdash.length; i++){
       var letters = splitdash[i].split('');
@@ -24,41 +24,19 @@ function imgProducts (path) {
 };
 
 function randomNumGen () {
-  var random = Math.floor((Math.random() * imgArray.length));
+  var random = Math.floor(Math.random() * productArray.length);
   return random;
 
 }
 
 for (var i = 0; i < products.length; i++) {
-  new Product(products[i]);
+  new imgProducts(products[i]);
 }
 
 var oldIdx = [];
 
-// var bag = new Product('bag');
-// var banana = new Product('banana');
-// var bathroom = new Product('bathroom');
-// var boots = new Product('boots');
-// var breakfast = new Product('breafkast');
-// var bubblegum = new Product('bubblegum');
-// var chair = new Product('chair');
-// var cthulhu = new Product('cthulhu');
-// var dogDuck = new Product('dog-duck');
-// var dragon = new Product('dragon');
-// var pen = new Product('pen');
-// var petSweep = new Product('pet-sweep');
-// var scissors = new Product('scissors');
-// var shark = new Product('shark');
-// var baby = new Product('baby-sweep');
-// var tauntaun = new Product('tauntaun');
-// var unicorn = new Product('unicorn');
-// var usb = new Product('usb');
-// var waterCan = new Product('water-can');
-// var wineGlass = new Product('wine-glass');
-
 function randomImg(event) {
   userClicks++;
-
   if (event) {
     var clickedProdIdx = parseInt(event.target.alt);
     productArray[clickedProdIdx].numOfClicks++;
@@ -86,7 +64,7 @@ function randomImg(event) {
   }
 
   for (var i = 0; i < imgTags.length; i++){
-    imgTags[i].setAttribute('src', productsToBeSeen[i].fname);
+    imgTags[i].setAttribute('src', productsToBeSeen[i].path);
     imgTags[i].setAttribute('alt', indices[i]);
   }
 
